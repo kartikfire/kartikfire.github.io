@@ -1,0 +1,18 @@
+<html contenteditable spellcheck=false>
+    <head>
+        <title>Typing Zone!</title>
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $(document).keydown(function (event) {
+                    if (event.ctrlKey && event.keyCode == 83) {
+                        event.preventDefault();
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>

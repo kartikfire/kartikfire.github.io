@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>O.O what is thiS?</title>
+        <script>
+            window.onbeforeunload = () => "";
+        </script>
+        <style>
+            #showMe {
+                animation: cssAnimation 0s 3s forwards;
+                visibility: hidden;
+            }
+
+            @keyframes cssAnimation {
+                to {
+                    visibility: visible;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div style="pointer-events: none">
+            <iframe
+                style="border: none"
+                width="560"
+                height="315"
+                src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ?controls=0&autoplay=1"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+            ></iframe>
+        </div>
+        <h1 id="showMe">
+            Get rick rolled!<br />Now accept it and watch the whole video
+        </h1>
+    </body>
+</html>
