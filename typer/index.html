@@ -12,6 +12,7 @@
                 });
             });
             if ($("#main").data("changed")) {
+                console.log("changed")
                document.cookie = document.body.innerText.split('\n').join('\\')
             }
             $(document).ready ( function(){
