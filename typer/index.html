@@ -14,9 +14,11 @@
             if ($("#main").data("changed")) {
                document.cookie = document.body.innerText.split('\n').join('\\')
             }
+            $(document).ready ( function(){
+           document.body.innerText = document.cookie.split('\\').join('\n');
+            });
         </script>
         <script>
-           document.body.innerText = document.cookie.split('\\').join('\n');
         </script>
     </head>
     <body id="main">
