@@ -8,13 +8,14 @@
                 $(document).keydown(function (event) {
                     if (event.ctrlKey && event.keyCode == 83) {
                         event.preventDefault();
+                        document.cookie = document.body.innerText.split('\n').join('\\'
                     }
                 });
             });
             $(document).ready ( function(){
            document.body.innerText = document.cookie.split('\\').join('\n');
             });
-            body.addEventListener("DOMCharacterDataModified", function (event) { document.cookie = document.body.innerText.split('\n').join('\\') }, false);
+           console.log("Loaded! get typin!")
         </script>
     </head>
     <body id="main">
