@@ -9,12 +9,8 @@
             window.onbeforeunload = () => "";
         </script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-        <script>
-        $(document).ready(function() {
-            $('#body').show()
-        })
-        </script>
         <style>
+            
             #showMe {
                 animation: cssAnimation 0s 3s forwards;
                 visibility: hidden;
@@ -25,9 +21,14 @@
                     visibility: visible;
                 }
             }
+        
+            #body {
+                animation: cssAnimation 0s 1s forwards;
+                visibility: hidden;
+            }
         </style>
     </head>
-    <body style="display:none;" id="body">
+    <body id="body">
         <div style="pointer-events: none">
             <iframe
                 style="border: none"
