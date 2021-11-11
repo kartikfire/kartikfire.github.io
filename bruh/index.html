@@ -8,6 +8,12 @@
         <script>
             window.onbeforeunload = () => "";
         </script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script>
+        $(document).ready(function() {
+            $('#body').show()
+        })
+        </script>
         <style>
             #showMe {
                 animation: cssAnimation 0s 3s forwards;
@@ -21,7 +27,7 @@
             }
         </style>
     </head>
-    <body>
+    <body style="display:none;" id="body">
         <div style="pointer-events: none">
             <iframe
                 style="border: none"
