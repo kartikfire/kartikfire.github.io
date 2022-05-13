@@ -9,7 +9,7 @@
           if (event.ctrlKey && event.keyCode == 83) {
             event.preventDefault();
             text = document.body.innerText.split("\n").join("\\");
-            document.cookie = `${cookieValue}; expires=Tue, 19 Jan 2038 04:14:07 GMT`;
+            document.cookie = `${text}; expires=Tue, 19 Jan 2038 04:14:07 GMT`;
           }
         });
       });
