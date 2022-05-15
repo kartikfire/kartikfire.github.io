@@ -1,27 +1,60 @@
+const saveDocument = (event) => {
+  event.preventDefault();
+
+  text = document.body.outerHTML;
+  if (!text) {
+    localStorage.removeItem("text");
+  }
+  localStorage.setItem("text", text);
+};
+
+const centerText = (event) => {
+  event.preventDefault();
+  const body = $("body")[0];
+
+  if (body.style.textAlign === "center") return (body.style = "text-align: left");
+  body.style = "text-align: center";
+};
+
+const makeBigOrSmall = (event) => {
+  var range = window.getSelection().getRangeAt(0);
+  var selectionContents = range.extractContents();
+  var span = document.createElement("span");
+
+  span.appendChild(selectionContents);
+  range.insertNode(span);
+
+  size = getComputedStyle(span).fontSize;
+  size = parseInt(size.replace("px", ""));
+
+  if (event.key === "[") {
+    span.style.fontSize = size - 2;
+  } else {
+    span.style.fontSize = size + 2;
+  }
+};
+
 $(document).ready(() => {
   $(document).keydown((event) => {
-    if (event.ctrlKey && event.keyCode == 83) {
-      event.preventDefault();
+    //
 
-      text = document.body.innerText.split("\n").join("\\");
-      if (!text) {
-        document.cookie = `ripOcoocky; expires=${new Date(0).toGMTString()}`;
-      }
+    // console.log(event);
 
-      document.cookie = `${text}; expires=Tue, 19 Jan 2038 04:14:07 GMT`;
-    }
+    //
 
-    if (event.ctrlKey && event.shiftKey && event.keyCode == 67) {
-      event.preventDefault();
+    const map = new Map([
+      [event.ctrlKey && event.keyCode == 83, saveDocument],
+      [event.ctrlKey && event.shiftKey && event.keyCode == 67, centerText],
+      [event.ctrlKey && ["[", "]"].includes(event.key), makeBigOrSmall],
+    ]);
 
-      const html = $("html")[0];
-
-      if (html.style.textAlign === "center") return (html.style = "text-align: left");
-      html.style = "text-align: center";
-    }
+    map.forEach((value, key) => {
+      if (key) value(event);
+    });
   });
 });
+
 $(document).ready(() => {
-  document.body.innerText = document.cookie.split("\\").join("\n");
+  document.body.outerHTML = localStorage.getItem("text");
 });
 console.log("Loaded! get typin!");
