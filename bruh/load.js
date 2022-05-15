@@ -1,4 +1,3 @@
-
 var tag = document.createElement("script");
 
 tag.src = "https://www.youtube.com/iframe_api";
@@ -14,6 +13,7 @@ function onYouTubeIframeAPIReady() {
 
 const int = setInterval(() => {
   if (!ready) return;
+  if (!player?.playVideo) return;
   player.playVideo();
   player.unMute();
   clearInterval(int);
