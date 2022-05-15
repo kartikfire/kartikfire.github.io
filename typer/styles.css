@@ -1,15 +1,15 @@
 @font-face {
-    font-family: "CascadiaCode";
-    src: url('CascadiaCode.woff2') format('woff2');
+  font-family: "CascadiaCode";
+  src: url("CascadiaCode.woff2") format("woff2");
 }
 html {
-    font-family: "CascadiaCode";
-    color: #e8eaed;
-    background: #202124;
+  font-family: "CascadiaCode";
+  color: #e8eaed;
+  background: #202124;
 }
 
 body::-webkit-scrollbar {
-  width: 2.26928895612708vh; 
+  width: 2.26928895612708vh;
 }
 
 body::-webkit-scrollbar-track {
