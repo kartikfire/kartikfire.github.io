@@ -6,6 +6,6 @@ frame.src = "https://www.youtube.com/embed/dQw4w9WgXcQ?controls=0&autoplay=1";
 frame.frameBorder = "0";
 frame.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
 
-setInterval(() => {
+setTimeout(() => {
 document.getElementById("thing").appendChild(frame);
 }, 5000)
